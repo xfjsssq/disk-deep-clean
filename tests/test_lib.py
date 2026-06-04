@@ -4,7 +4,6 @@ Run with: pytest tests/ -v
 """
 
 import os
-
 from lib import (
     ensure_data_dir,
     find_project_root,
