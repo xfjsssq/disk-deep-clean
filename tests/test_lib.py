@@ -4,7 +4,6 @@ Run with: pytest tests/ -v
 """
 
 import os
-import sys
 
 from lib import (
     ensure_data_dir,

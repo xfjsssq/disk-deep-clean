@@ -1,7 +1,4 @@
 """Tests for deep_scan utility functions."""
-import os
-import sys
-
 import pytest
 
 from deep_scan import IS_WINDOWS, _classify_by_filetypes, _should_skip_dir, is_prohibited

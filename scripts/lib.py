@@ -2,18 +2,16 @@
 Disk Deep Clean — 公共工具函数
 纯 Python 标准库，跨平台兼容
 """
-
 import ctypes
-from datetime import datetime
 import json
 import os
-from pathlib import Path
 import shutil
 import struct
 import subprocess
 import sys
+from datetime import datetime
+from pathlib import Path
 from typing import Optional
-
 
 # ── 平台检测 ────────────────────────────────────────────
 
