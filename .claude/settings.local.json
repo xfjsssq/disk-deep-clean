@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m py_compile scripts/lib.py)",
+      "Bash(python -m py_compile scripts/auto_clean.py)",
+      "Bash(python -m py_compile scripts/deep_scan.py)",
+      "Bash(python -m py_compile scripts/clean.py)",
+      "Bash(python scripts/auto_clean.py --help)",
+      "Bash(python scripts/deep_scan.py --help)",
+      "Bash(python scripts/clean.py --help)",
+      "Bash(python -m py_compile scripts/lib.py scripts/auto_clean.py scripts/deep_scan.py scripts/clean.py)",
+      "Bash(python -c ' *)",
+      "Bash(python scripts/auto_clean.py --dry-run)",
+      "Bash(python scripts/deep_scan.py)",
+      "Bash(python scripts/clean.py --selections \"all-safe\" --yes --dry-run)",
+      "Bash(python scripts/clean.py --selections \"all-safe\" --yes)",
+      "Bash(python -m py_compile scripts/lib.py scripts/clean.py)",
+      "Bash(python -c \"import sys; sys.path = [p for p in sys.path if 'disk-deep-clean' not in p]; exec\\(open\\('D:/Agent/Agent工作区/Claude Code工作区/disk-deep-clean/scripts/clean.py'\\).read\\(\\)\\)\" --selections \"all-safe\" --yes)",
+      "Bash(python -m py_compile \"D:/Agent/Agent工作区/Claude Code工作区/disk-deep-clean/scripts/lib.py\" \"D:/Agent/Agent工作区/Claude Code工作区/disk-deep-clean/scripts/auto_clean.py\" \"D:/Agent/Agent工作区/Claude Code工作区/disk-deep-clean/scripts/deep_scan.py\" \"D:/Agent/Agent工作区/Claude Code工作区/disk-deep-clean/scripts/clean.py\")",
+      "Read(//d//**)",
+      "Bash(python -c \"import py_compile; py_compile.compile\\('D:/Agent/Agent工作区/Claude Code工作区/disk-deep-clean/scripts/lib.py', doraise=True\\); print\\('lib OK'\\)\")",
+      "Read(//c/Users/knowingly/**)",
+      "Bash(python \"D:/Agent/Agent工作区/Claude Code工作区/disk-deep-clean/scripts/lib.py\")",
+      "Bash(env)",
+      "Bash(python -I -c \"import sys; print\\(sys.base_prefix\\); print\\(sys.executable\\); print\\('OK'\\)\")",
+      "Bash(PYTHONHOME=\"C:/Users/knowingly/AppData/Local/Programs/Python/Python312\" python *)"
+    ]
+  }
+}

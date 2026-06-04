@@ -1,0 +1,75 @@
+# GitHub Actions CI for Disk Deep Clean
+# Runs tests on 3 platforms × 4 Python versions
+
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+      fail-fast: false  # Report results for all platforms even if one fails
+
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          pip install -e .
+
+      - name: Run tests
+        run: pytest tests/ -v --tb=short
+
+      - name: Syntax check all scripts
+        run: |
+          python -c "
+          import ast, glob
+          for f in glob.glob('scripts/*.py'):
+              with open(f, encoding='utf-8') as fh:
+                  ast.parse(fh.read())
+              print(f'OK: {f}')
+          "
+
+      - name: Syntax check test files
+        run: |
+          python -c "
+          import ast, glob
+          for f in glob.glob('tests/*.py'):
+              with open(f, encoding='utf-8') as fh:
+                  ast.parse(fh.read())
+              print(f'OK: {f}')
+          "
+
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ruff
+        run: pip install ruff
+
+      - name: Lint with ruff
+        run: ruff check scripts/ tests/
