@@ -2,14 +2,23 @@
 import os
 import sys
 
+import pytest
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
-from deep_scan import _classify_by_filetypes, _should_skip_dir, is_prohibited
+from deep_scan import IS_WINDOWS, is_prohibited, _should_skip_dir, _classify_by_filetypes
+
+IS_NOT_WINDOWS = pytest.mark.skipif(
+    not IS_WINDOWS,
+    reason="Windows-specific paths only apply on Windows",
+)
 
 
 class TestIsProhibited:
+    @IS_NOT_WINDOWS
     def test_windows_system_dir(self):
         assert is_prohibited("C:\\Windows")
 
+    @IS_NOT_WINDOWS
     def test_windows_program_files(self):
         assert is_prohibited("C:\\Program Files")
 
