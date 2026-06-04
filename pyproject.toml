@@ -50,3 +50,4 @@ select = ["E", "F", "W", "I"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["lib", "deep_scan", "scripts"]
+force-sort-within-sections = true

@@ -3,7 +3,6 @@
 Run with: pytest tests/ -v
 """
 
-import os
 from lib import (
     ensure_data_dir,
     find_project_root,
@@ -25,6 +24,7 @@ from lib import (
     save_scan_results,
     ScanContext,
 )
+import os
 
 
 # ─── format_size tests ─────────────────────────────────────
