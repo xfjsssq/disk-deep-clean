@@ -4,6 +4,8 @@ Run with: pytest tests/ -v
 """
 
 from lib import (
+    IS_WINDOWS,
+    ScanContext,
     ensure_data_dir,
     find_project_root,
     format_size,
@@ -12,7 +14,6 @@ from lib import (
     get_fixed_drives,
     get_package_cache_paths,
     is_admin,
-    IS_WINDOWS,
     load_auto_clean_result,
     load_scan_results,
     move_to_trash,
@@ -22,7 +23,6 @@ from lib import (
     safe_scandir,
     save_auto_clean_result,
     save_scan_results,
-    ScanContext,
 )
 import os
 

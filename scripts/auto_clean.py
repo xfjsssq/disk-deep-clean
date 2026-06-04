@@ -15,8 +15,8 @@ if sys.platform == 'win32':
 
 import argparse
 import glob
-import shutil
 from pathlib import Path
+import shutil
 
 try:
     from scripts.lib import (

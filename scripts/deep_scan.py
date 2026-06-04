@@ -14,9 +14,9 @@ if sys.platform == 'win32':
         pass
 
 import argparse
-import time
 from collections import Counter
 from datetime import datetime
+import time
 
 try:
     from scripts.lib import (
