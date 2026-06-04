@@ -49,4 +49,4 @@ target-version = "py38"
 select = ["E", "F", "W", "I"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["scripts"]
+known-first-party = ["lib", "deep_scan", "scripts"]
