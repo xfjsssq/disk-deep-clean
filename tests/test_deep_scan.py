@@ -4,7 +4,6 @@ import sys
 
 import pytest
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 from deep_scan import IS_WINDOWS, _classify_by_filetypes, _should_skip_dir, is_prohibited
 
 IS_NOT_WINDOWS = pytest.mark.skipif(

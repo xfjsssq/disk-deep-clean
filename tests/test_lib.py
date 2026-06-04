@@ -6,10 +6,6 @@ Run with: pytest tests/ -v
 import os
 import sys
 
-# Ensure scripts is importable for tests
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
-
-# Platform-independent test suite
 from lib import (
     ensure_data_dir,
     find_project_root,
