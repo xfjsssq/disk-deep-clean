@@ -27,7 +27,6 @@ from lib import (
     save_scan_results,
 )
 
-
 # ─── format_size tests ─────────────────────────────────────
 
 class TestFormatSize:
