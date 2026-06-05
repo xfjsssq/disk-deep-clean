@@ -3,6 +3,8 @@
 Run with: pytest tests/ -v
 """
 
+import os
+
 from lib import (
     IS_WINDOWS,
     ScanContext,
@@ -24,8 +26,6 @@ from lib import (
     save_auto_clean_result,
     save_scan_results,
 )
-
-import os
 
 
 # ─── format_size tests ─────────────────────────────────────
